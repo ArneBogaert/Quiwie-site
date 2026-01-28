@@ -5,6 +5,44 @@ import TourList from '../components/TourList.astro';
 ---
 
 <Layout title="Quiwie - Linktree">
+  <style>
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 0;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-text 18s linear infinite;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+    }
+
+    @keyframes scroll-text {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+      cursor: default;
+    }
+  </style>
+
   <div class="container">
     <div class="logo-wrapper">
       <img src="/img/TijdelijkLogo.png" alt="Quiwie Logo" class="logo" />
@@ -12,13 +50,19 @@ import TourList from '../components/TourList.astro';
 
     <h1 class="band-name">Quiwie</h1>
 
+    <div class="marquee-container scroll-reveal">
+      <div class="marquee-content">
+        Hallo wij zijn quiwie wij maken leuke muziekjes, kom kijken naar onze
+        shows!
+      </div>
+    </div>
+
     <section id="tour-dates" class="scroll-reveal">
       <h2 class="section-title">Concerten</h2>
       <TourList />
     </section>
 
     <div class="release-header scroll-reveal">
-      <span class="new-label">Nieuw</span>
       <h2 class="section-title">Laatste release</h2>
     </div>
 
@@ -41,7 +85,9 @@ import TourList from '../components/TourList.astro';
         >
       </div>
     </section>
-
+    <div class="release-header scroll-reveal">
+      <h2 class="section-title">Links</h2>
+    </div>
     <section class="links-list scroll-reveal">
       <SocialLink
         href="/coming-soon"
