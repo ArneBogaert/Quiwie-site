@@ -2,14 +2,12 @@
 import Layout from '../layouts/layout.astro';
 import SocialLink from '../components/SocialLink.astro';
 import TourList from '../components/TourList.astro';
-
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Quiwie">
+<Layout title="Quiwie - Linktree">
   <div class="container">
     <div class="logo-wrapper">
-      <img src={`/img/TijdelijkLogo.png`} alt="Quiwie Logo" class="logo" />
+      <img src="/img/TijdelijkLogo.png" alt="Quiwie Logo" class="logo" />
     </div>
 
     <h1 class="band-name">Quiwie</h1>
@@ -20,6 +18,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </section>
 
     <div class="release-header scroll-reveal">
+      <span class="new-label">Nieuw</span>
       <h2 class="section-title">Laatste release</h2>
     </div>
 
@@ -27,7 +26,6 @@ const baseUrl = import.meta.env.BASE_URL;
       <iframe
         width="100%"
         height="120"
-        scrolling="no"
         frameborder="no"
         allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2245918166&color=%23899447&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&show_artwork=false"
@@ -46,7 +44,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
     <section class="links-list scroll-reveal">
       <SocialLink
-        href={`${baseUrl}/coming-soon`}
+        href="/coming-soon"
         icon="fab fa-spotify"
         title="Spotify (Coming soon)"
         color="#1DB954"
