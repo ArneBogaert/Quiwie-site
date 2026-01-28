@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://Arne-Bogaert.github.io',
-  base: '/quiwie-site',
+  site: 'https://quiwieband.vercel.app',
+  base: '/',
+  adapter: vercel(),
 });
