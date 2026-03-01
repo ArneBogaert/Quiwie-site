@@ -37,6 +37,33 @@ const { title } = Astro.props;
       document
         .querySelectorAll('.scroll-reveal')
         .forEach((el) => observer.observe(el));
+
+      // Staggered reveal for link items inside .links-list
+      const linksList = document.querySelector('.links-list');
+      if (linksList) {
+        const linkObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const items = entry.target.querySelectorAll('.link-item');
+              items.forEach((item, i) => {
+                setTimeout(() => {
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateY(0)';
+                }, i * 80);
+              });
+              linkObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        linkObserver.observe(linksList);
+
+        // Set initial state for link items
+        linksList.querySelectorAll('.link-item').forEach((item) => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(15px)';
+          item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        });
+      }
     </script>
   </body>
 </html>
