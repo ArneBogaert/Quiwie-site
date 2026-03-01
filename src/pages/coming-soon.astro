@@ -33,25 +33,30 @@ const baseUrl = import.meta.env.BASE_URL;
       align-items: center;
       gap: 12px;
       background-color: var(--accent-color);
-      color: white;
+      color: #faf9f6;
       text-decoration: none;
       padding: 16px 32px;
       border-radius: 50px;
       font-weight: bold;
       transition:
         transform 0.2s,
-        background-color 0.2s;
+        background-color 0.2s,
+        box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(107, 122, 46, 0.2);
     }
     .back-button:hover {
       transform: scale(1.05);
-      background-color: #76813d;
+      background-color: #5c6b28;
+      box-shadow: 0 6px 20px rgba(107, 122, 46, 0.3);
     }
     .presave-btn {
       background-color: #1db954;
       margin-bottom: 15px;
+      box-shadow: 0 4px 14px rgba(29, 185, 84, 0.2);
     }
     .presave-btn:hover {
       background-color: #1ed760;
+      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.3);
     }
   </style>
 

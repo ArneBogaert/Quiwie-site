@@ -10,12 +10,12 @@ import TourList from '../components/TourList.astro';
       width: 100%;
       overflow: hidden;
       background: var(--accent-color);
-      color: white;
-      padding: 10px 0;
+      color: #faf9f6;
+      padding: 12px 0;
       margin-bottom: 30px;
-      border-radius: 8px;
+      border-radius: 10px;
       white-space: nowrap;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(107, 122, 46, 0.2);
       position: relative;
     }
 
@@ -25,8 +25,8 @@ import TourList from '../components/TourList.astro';
       animation: scroll-text 18s linear infinite;
       font-weight: 800;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
     }
 
     @keyframes scroll-text {
@@ -138,5 +138,9 @@ import TourList from '../components/TourList.astro';
         <button type="submit">Blijf op de hoogte van onze deugnieterij</button>
       </form>
     </section>
+
+    <footer class="site-footer scroll-reveal">
+      <p>&copy; 2025 Quiwie</p>
+    </footer>
   </div>
 </Layout>

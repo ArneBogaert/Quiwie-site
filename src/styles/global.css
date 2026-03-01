@@ -1,11 +1,15 @@
 :root {
-    --bg-color-start: #fbfcf8;
-    --bg-color-end: #dfe5d2;
-    --text-color: #1a1a1a;
-    --accent-color: #899447;
-    --button-bg: #f8f8f8;
-    --button-hover: #f0f0f0;
-    --border-style: 1px solid #e0e0e0;
+    --bg-color-start: #faf9f6;
+    --bg-color-end: #ede9df;
+    --text-color: #2c2416;
+    --accent-color: #6b7a2e;
+    --accent-light: #8a9e3b;
+    --warm-brown: #8b6f47;
+    --button-bg: rgba(255, 255, 255, 0.7);
+    --button-hover: #ffffff;
+    --border-style: 1px solid rgba(139, 111, 71, 0.15);
+    --shadow-soft: 0 2px 8px rgba(44, 36, 22, 0.06);
+    --shadow-hover: 0 6px 20px rgba(44, 36, 22, 0.1);
 }
 
 @keyframes fadeInUp {
@@ -22,7 +26,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: linear-gradient(180deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%);
+    background: var(--bg-color-start);
     background-attachment: fixed;
     color: var(--text-color);
     margin: 0;
@@ -30,6 +34,22 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 0%, rgba(107, 122, 46, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(139, 111, 71, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .container {
@@ -45,11 +65,15 @@ body {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: var(--shadow-soft);
 }
 
 .logo {
@@ -68,6 +92,20 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: default;
     display: inline-block;
+    position: relative;
+}
+
+.band-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
 .band-name:hover {
@@ -76,15 +114,19 @@ body {
     transform: scale(1.05);
 }
 
+.band-name:hover::after {
+    width: 80%;
+}
+
 .section-title {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--text-color);
+    color: var(--warm-brown);
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.7;
+    letter-spacing: 3px;
+    opacity: 0.8;
 }
 
 section {
@@ -95,8 +137,10 @@ section {
     border-radius: 12px;
     overflow: hidden;
     border: var(--border-style);
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     height: 120px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-soft);
 }
 
 .links-list {
@@ -110,7 +154,7 @@ section {
     color: var(--text-color);
     text-decoration: none;
     padding: 16px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -118,6 +162,8 @@ section {
     gap: 12px;
     transition: all 0.25s ease;
     border: var(--border-style);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-soft);
 }
 
 .link-item i,
@@ -128,53 +174,75 @@ section {
 }
 
 .link-item:hover {
-    background-color: #ffffff;
-    transform: translateY(-2px);
+    background-color: var(--button-hover);
+    transform: translateY(-3px);
     border-color: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-hover);
 }
 
 .newsletter-box {
     margin-top: 40px;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
     border: var(--border-style);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-soft);
 }
 
 .newsletter-box input {
     width: 100%;
     padding: 14px;
     margin-bottom: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid rgba(139, 111, 71, 0.2);
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 1rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-box input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(107, 122, 46, 0.1);
 }
 
 .newsletter-box button {
     width: 100%;
     padding: 14px;
     background-color: var(--accent-color);
-    color: white;
+    color: #faf9f6;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    letter-spacing: 0.3px;
+}
+
+.newsletter-box button:hover {
+    background-color: var(--accent-light);
+    transform: translateY(-1px);
 }
 
 .sc-caption {
     font-size: 10px;
-    color: #999;
+    color: var(--warm-brown);
     line-break: anywhere;
     margin-top: 8px;
     font-family: Interstate, sans-serif;
+    opacity: 0.7;
 }
 
 .sc-caption a {
-    color: #999;
+    color: var(--warm-brown);
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sc-caption a:hover {
+    color: var(--accent-color);
 }
 
 @keyframes float {
@@ -183,7 +251,7 @@ section {
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
     }
 
     100% {
@@ -192,7 +260,7 @@ section {
 }
 
 .logo-wrapper {
-    animation: float 4s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
 }
 
 .scroll-reveal {
@@ -204,4 +272,18 @@ section {
 .scroll-reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.site-footer {
+    margin-top: 30px;
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 0.75rem;
+    color: var(--warm-brown);
+    opacity: 0.5;
+    letter-spacing: 1px;
+    margin: 0;
 }
