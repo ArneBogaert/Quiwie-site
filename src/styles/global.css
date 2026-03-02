@@ -1,15 +1,16 @@
 :root {
-    --bg-color-start: #faf9f6;
-    --bg-color-end: #ede9df;
+    --bg-color-start: #f5f0e8;
+    --bg-color-end: #e8dcc8;
     --text-color: #2c2416;
     --accent-color: #6b7a2e;
     --accent-light: #8a9e3b;
     --warm-brown: #8b6f47;
-    --button-bg: rgba(255, 255, 255, 0.7);
+    --warm-sand: #d4c4a8;
+    --button-bg: rgba(255, 255, 255, 0.65);
     --button-hover: #ffffff;
-    --border-style: 1px solid rgba(139, 111, 71, 0.15);
-    --shadow-soft: 0 2px 8px rgba(44, 36, 22, 0.06);
-    --shadow-hover: 0 6px 20px rgba(44, 36, 22, 0.1);
+    --border-style: 1px solid rgba(139, 111, 71, 0.12);
+    --shadow-soft: 0 2px 12px rgba(44, 36, 22, 0.07);
+    --shadow-hover: 0 8px 24px rgba(44, 36, 22, 0.12);
 }
 
 @keyframes fadeInUp {
@@ -46,9 +47,10 @@ body::before {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at 20% 0%, rgba(107, 122, 46, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 100%, rgba(139, 111, 71, 0.06) 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%);
+        radial-gradient(ellipse 80% 60% at 15% -10%, rgba(107, 122, 46, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 90% 110%, rgba(139, 111, 71, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 60% 40%, rgba(212, 196, 168, 0.2) 0%, transparent 40%),
+        linear-gradient(175deg, var(--bg-color-start) 0%, var(--bg-color-end) 60%, #ddd0b8 100%);
     z-index: -1;
     pointer-events: none;
 }
@@ -73,16 +75,27 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.45);
     border-radius: 50%;
     padding: 10px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 4px 20px rgba(44, 36, 22, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* ---- Band Name ---- */
@@ -166,12 +179,12 @@ section {
 /* ---- SoundCloud ---- */
 
 .soundcloud-wrapper {
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     border: var(--border-style);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.6);
     height: 120px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     box-shadow: var(--shadow-soft);
 }
 
@@ -183,12 +196,14 @@ section {
     gap: 12px;
 }
 
+/* ---- Link items ---- */
+
 .link-item {
     background-color: var(--button-bg);
     color: var(--text-color);
     text-decoration: none;
-    padding: 12px 16px;
-    border-radius: 12px;
+    padding: 14px 18px;
+    border-radius: 14px;
     font-weight: 600;
     font-size: 0.95rem;
     display: flex;
@@ -197,7 +212,7 @@ section {
     gap: 12px;
     transition: all 0.25s ease;
     border: var(--border-style);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     box-shadow: var(--shadow-soft);
     position: relative;
     overflow: hidden;
@@ -242,7 +257,7 @@ section {
 .link-item:hover {
     background-color: var(--button-hover);
     transform: translateY(-3px);
-    border-color: var(--accent-color);
+    border-color: rgba(107, 122, 46, 0.3);
     box-shadow: var(--shadow-hover);
 }
 
@@ -256,10 +271,10 @@ section {
 .newsletter-box {
     margin-top: 10px;
     padding: 28px 24px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 18px;
     border: var(--border-style);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     box-shadow: var(--shadow-soft);
 }
 
@@ -408,5 +423,5 @@ body::after {
     background-size: 256px 256px;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.5;
+    opacity: 0.4;
 }
