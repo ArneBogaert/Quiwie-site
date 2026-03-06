@@ -17,13 +17,20 @@ const { href, icon, imgSrc, title, color, isExternal = true } = Astro.props;
 
 <style>
   .link-icon-wrapper {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    border: 2px solid var(--text-color);
+    box-shadow: 2px 2px 0px var(--text-color);
+    transition: all 0.2s ease;
+  }
+  .link-item:hover .link-icon-wrapper {
+    transform: rotate(-10deg) scale(1.1);
+    box-shadow: 3px 3px 0px var(--text-color);
   }
   .link-title {
     flex: 1;
