@@ -29,7 +29,7 @@ const sortedTours = tours.sort(
   .tour-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 25px;
   }
   .tour-item {
@@ -37,16 +37,16 @@ const sortedTours = tours.sort(
     justify-content: space-between;
     align-items: center;
     padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(139, 111, 71, 0.15);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 8px rgba(44, 36, 22, 0.06);
-    transition: all 0.25s ease;
+    background: var(--button-bg);
+    border: 2px solid var(--warm-brown);
+    border-radius: 18px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .tour-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(44, 36, 22, 0.1);
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: var(--shadow-hover);
+    background: var(--button-hover);
     border-color: var(--accent-color);
   }
   .tour-info {
@@ -56,30 +56,36 @@ const sortedTours = tours.sort(
     text-align: left;
   }
   .tour-date {
-    font-size: 0.8rem;
-    color: var(--warm-brown);
-    font-weight: 600;
+    font-family: 'Comic Neue', cursive;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-weight: 700;
     letter-spacing: 0.5px;
   }
   .tour-location {
-    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
     color: var(--text-color);
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
   .tour-btn {
     background: var(--accent-color);
     color: #faf9f6;
     text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.8rem;
+    padding: 10px 18px;
+    border-radius: 14px;
+    border: 2px solid var(--text-color);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
     letter-spacing: 0.3px;
-    transition: background-color 0.2s ease, transform 0.15s ease;
+    box-shadow: 2px 2px 0px var(--warm-brown);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     white-space: nowrap;
   }
   .tour-btn:hover {
     background: var(--accent-light);
-    transform: scale(1.05);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--warm-brown);
   }
 </style>
