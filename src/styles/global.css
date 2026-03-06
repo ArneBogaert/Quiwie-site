@@ -269,46 +269,40 @@ section {
     border-color: var(--accent-color);
 }
 
-/* Spotify - groen */
+/* Spotify - zacht groen */
 .link-item[data-platform="spotify"]:hover {
-    background-color: #1DB954;
+    background-color: #b8f0c8;
     border-color: #1DB954;
-    color: white;
 }
 
-/* Instagram - roze/rood */
+/* Instagram - zacht roze */
 .link-item[data-platform="instagram"]:hover {
-    background-color: #E4405F;
+    background-color: #ff6b9d;
     border-color: #E4405F;
-    color: white;
 }
 
-/* SoundCloud - oranje */
+/* SoundCloud - zacht oranje */
 .link-item[data-platform="soundcloud"]:hover {
-    background-color: #FF5500;
+    background-color: #ff9f43;
     border-color: #FF5500;
-    color: white;
 }
 
-/* VI.BE - paars */
+/* VI.BE - zacht paars */
 .link-item[data-platform="vibe"]:hover {
-    background-color: #7B2D8E;
+    background-color: #d4a5e0;
     border-color: #7B2D8E;
-    color: white;
 }
 
-/* Facebook - blauw */
+/* Facebook - zacht blauw */
 .link-item[data-platform="facebook"]:hover {
-    background-color: #1877F2;
+    background-color: #6bcfff;
     border-color: #1877F2;
-    color: white;
 }
 
-/* Contact/Email - warm bruin */
+/* Contact/Email - zacht geel */
 .link-item[data-platform="email"]:hover {
-    background-color: var(--warm-brown);
+    background-color: #ffd93d;
     border-color: var(--warm-brown);
-    color: white;
 }
 
 .link-item:hover i,
