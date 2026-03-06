@@ -9,14 +9,14 @@ import TourList from '../components/TourList.astro';
     .marquee-container {
       width: 100%;
       overflow: hidden;
-      background: var(--pop-yellow);
-      color: var(--text-color);
+      background: var(--accent-color);
+      color: #faf9f6;
       padding: 14px 0;
       margin-bottom: 30px;
       border-radius: 20px;
       white-space: nowrap;
       border: 3px solid var(--text-color);
-      box-shadow: 4px 4px 0px var(--text-color);
+      box-shadow: var(--shadow-soft);
       position: relative;
     }
 
@@ -46,7 +46,7 @@ import TourList from '../components/TourList.astro';
     
     .marquee-container:hover {
       transform: rotate(-1deg);
-      box-shadow: 6px 6px 0px var(--text-color);
+      box-shadow: var(--shadow-hover);
     }
   </style>
 
