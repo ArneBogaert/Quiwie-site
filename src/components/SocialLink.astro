@@ -1,8 +1,8 @@
 ---
-const { href, icon, imgSrc, title, color, isExternal = true } = Astro.props;
+const { href, icon, imgSrc, title, color, isExternal = true, platform } = Astro.props;
 ---
 
-<a href={href} class="link-item" target={isExternal ? '_blank' : '_self'}>
+<a href={href} class="link-item" target={isExternal ? '_blank' : '_self'} data-platform={platform}>
   <span class="link-icon-wrapper" style={`background: ${color || 'var(--accent-color)'}20;`}>
     {
       imgSrc ? (

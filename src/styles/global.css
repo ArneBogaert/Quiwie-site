@@ -269,6 +269,48 @@ section {
     border-color: var(--accent-color);
 }
 
+/* Spotify - groen */
+.link-item[data-platform="spotify"]:hover {
+    background-color: #1DB954;
+    border-color: #1DB954;
+    color: white;
+}
+
+/* Instagram - roze/rood */
+.link-item[data-platform="instagram"]:hover {
+    background-color: #E4405F;
+    border-color: #E4405F;
+    color: white;
+}
+
+/* SoundCloud - oranje */
+.link-item[data-platform="soundcloud"]:hover {
+    background-color: #FF5500;
+    border-color: #FF5500;
+    color: white;
+}
+
+/* VI.BE - paars */
+.link-item[data-platform="vibe"]:hover {
+    background-color: #7B2D8E;
+    border-color: #7B2D8E;
+    color: white;
+}
+
+/* Facebook - blauw */
+.link-item[data-platform="facebook"]:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    color: white;
+}
+
+/* Contact/Email - warm bruin */
+.link-item[data-platform="email"]:hover {
+    background-color: var(--warm-brown);
+    border-color: var(--warm-brown);
+    color: white;
+}
+
 .link-item:hover i,
 .link-item:hover img {
     transform: scale(1.2);
