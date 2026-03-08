@@ -22,6 +22,30 @@ const { title } = Astro.props;
     />
   </head>
   <body>
+    <!-- Floating Music Elements -->
+    <div class="music-bg-elements">
+      <svg class="music-note note-1" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <svg class="music-note note-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <svg class="music-note note-3" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <svg class="music-star star-1" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/>
+      </svg>
+      <svg class="music-star star-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/>
+      </svg>
+      <svg class="music-star star-3" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/>
+      </svg>
+      <div class="sound-wave wave-1"></div>
+      <div class="sound-wave wave-2"></div>
+    </div>
+    
     <slot />
 
     <script>
