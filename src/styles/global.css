@@ -460,9 +460,9 @@ section {
     margin: 0;
 }
 
-/* ---- Floating Music Elements ---- */
+/* ---- Floating Geometric Shapes ---- */
 
-.music-bg-elements {
+.floating-shapes {
     position: fixed;
     top: 0;
     left: 0;
@@ -473,137 +473,161 @@ section {
     overflow: hidden;
 }
 
-.music-note {
-    position: absolute;
-    color: var(--accent-color);
-    opacity: 0.08;
-    animation: floatNote 20s ease-in-out infinite;
-}
-
-.music-note.note-1 {
-    width: 40px;
-    height: 40px;
-    top: 15%;
-    left: 8%;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.music-note.note-2 {
-    width: 28px;
-    height: 28px;
-    top: 45%;
-    right: 10%;
-    animation-delay: -6s;
-    animation-duration: 22s;
-    color: var(--warm-brown);
-}
-
-.music-note.note-3 {
-    width: 35px;
-    height: 35px;
-    bottom: 25%;
-    left: 12%;
-    animation-delay: -12s;
-    animation-duration: 25s;
-}
-
-.music-star {
-    position: absolute;
-    opacity: 0.06;
-    animation: twinkleStar 8s ease-in-out infinite;
-}
-
-.music-star.star-1 {
-    width: 20px;
-    height: 20px;
-    top: 25%;
-    right: 15%;
-    color: var(--warm-brown);
-    animation-delay: 0s;
-}
-
-.music-star.star-2 {
-    width: 16px;
-    height: 16px;
-    top: 60%;
-    left: 6%;
-    color: var(--accent-color);
-    animation-delay: -3s;
-}
-
-.music-star.star-3 {
-    width: 22px;
-    height: 22px;
-    bottom: 35%;
-    right: 8%;
-    color: var(--accent-light);
-    animation-delay: -5s;
-}
-
-.sound-wave {
+.shape {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid var(--accent-color);
-    opacity: 0;
-    animation: pulseWave 12s ease-out infinite;
 }
 
-.sound-wave.wave-1 {
+/* Grote zwevende cirkels */
+.circle {
+    background: var(--accent-color);
+    opacity: 0.06;
+    animation: floatShape 25s ease-in-out infinite;
+}
+
+.circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    right: 8%;
+    background: var(--warm-brown);
+    animation-delay: -8s;
+    animation-duration: 30s;
+}
+
+.circle-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    left: 10%;
+    background: var(--accent-light);
+    animation-delay: -15s;
+    animation-duration: 22s;
+}
+
+/* Kleine zwevende stippen */
+.dot {
+    background: var(--warm-brown);
+    opacity: 0.1;
+    animation: floatDot 18s ease-in-out infinite;
+}
+
+.dot-1 {
+    width: 12px;
+    height: 12px;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0s;
+}
+
+.dot-2 {
+    width: 8px;
+    height: 8px;
+    top: 35%;
+    left: 15%;
+    background: var(--accent-color);
+    animation-delay: -4s;
+}
+
+.dot-3 {
+    width: 10px;
+    height: 10px;
+    top: 65%;
+    right: 20%;
+    animation-delay: -8s;
+}
+
+.dot-4 {
+    width: 6px;
+    height: 6px;
+    bottom: 30%;
+    left: 8%;
+    background: var(--accent-color);
+    animation-delay: -12s;
+}
+
+.dot-5 {
+    width: 14px;
+    height: 14px;
+    bottom: 45%;
+    right: 5%;
+    background: var(--accent-light);
+    animation-delay: -6s;
+    animation-duration: 20s;
+}
+
+/* Holle ringen */
+.ring {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    opacity: 0.08;
+    animation: floatRing 35s ease-in-out infinite;
+}
+
+.ring-1 {
+    width: 150px;
+    height: 150px;
+    top: 25%;
+    right: 3%;
+    animation-delay: 0s;
+}
+
+.ring-2 {
     width: 100px;
     height: 100px;
     bottom: 20%;
-    right: 5%;
-    animation-delay: 0s;
-}
-
-.sound-wave.wave-2 {
-    width: 80px;
-    height: 80px;
-    top: 30%;
-    left: 5%;
-    animation-delay: -6s;
+    left: 3%;
     border-color: var(--warm-brown);
+    animation-delay: -12s;
+    animation-duration: 28s;
 }
 
-@keyframes floatNote {
+@keyframes floatShape {
     0%, 100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) translateX(0) scale(1);
     }
     25% {
-        transform: translateY(-20px) rotate(5deg);
+        transform: translateY(-30px) translateX(15px) scale(1.05);
     }
     50% {
-        transform: translateY(-10px) rotate(-3deg);
+        transform: translateY(-15px) translateX(-10px) scale(0.95);
     }
     75% {
-        transform: translateY(-25px) rotate(3deg);
+        transform: translateY(-40px) translateX(5px) scale(1.02);
     }
 }
 
-@keyframes twinkleStar {
+@keyframes floatDot {
     0%, 100% {
-        opacity: 0.04;
-        transform: scale(1) rotate(0deg);
-    }
-    50% {
+        transform: translateY(0) translateX(0);
         opacity: 0.1;
-        transform: scale(1.2) rotate(15deg);
+    }
+    33% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.15;
+    }
+    66% {
+        transform: translateY(-10px) translateX(-15px);
+        opacity: 0.08;
     }
 }
 
-@keyframes pulseWave {
-    0% {
-        transform: scale(0.5);
+@keyframes floatRing {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
         opacity: 0.08;
     }
     50% {
-        transform: scale(1.5);
-        opacity: 0.03;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
+        transform: translateY(-25px) rotate(180deg) scale(1.1);
+        opacity: 0.05;
     }
 }
 
