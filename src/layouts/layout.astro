@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import DesktopEdgeScene from '../components/DesktopEdgeScene.astro';
 const { title } = Astro.props;
 ---
 
@@ -22,7 +23,21 @@ const { title } = Astro.props;
     />
   </head>
   <body>
-    <slot />
+    <DesktopEdgeScene />
+
+    <div class="site-shell">
+      <slot />
+    </div>
+
+    <style>
+      .site-shell {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
 
     <script>
       const observerOptions = {

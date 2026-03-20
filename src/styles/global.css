@@ -58,10 +58,13 @@ body::before {
 .container {
     width: 100%;
     max-width: 480px;
+    margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
     box-sizing: border-box;
     animation: fadeInUp 0.9s ease-out;
+    position: relative;
+    z-index: 1;
 }
 
 /* ---- Logo ---- */
