@@ -463,6 +463,177 @@ section {
     margin: 0;
 }
 
+/* ---- Floating Geometric Shapes ---- */
+
+.floating-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Grote zwevende cirkels */
+.circle {
+    background: var(--accent-color);
+    opacity: 0.06;
+    animation: floatShape 25s ease-in-out infinite;
+}
+
+.circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    right: 8%;
+    background: var(--warm-brown);
+    animation-delay: -8s;
+    animation-duration: 30s;
+}
+
+.circle-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    left: 10%;
+    background: var(--accent-light);
+    animation-delay: -15s;
+    animation-duration: 22s;
+}
+
+/* Kleine zwevende stippen */
+.dot {
+    background: var(--warm-brown);
+    opacity: 0.1;
+    animation: floatDot 18s ease-in-out infinite;
+}
+
+.dot-1 {
+    width: 12px;
+    height: 12px;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0s;
+}
+
+.dot-2 {
+    width: 8px;
+    height: 8px;
+    top: 35%;
+    left: 15%;
+    background: var(--accent-color);
+    animation-delay: -4s;
+}
+
+.dot-3 {
+    width: 10px;
+    height: 10px;
+    top: 65%;
+    right: 20%;
+    animation-delay: -8s;
+}
+
+.dot-4 {
+    width: 6px;
+    height: 6px;
+    bottom: 30%;
+    left: 8%;
+    background: var(--accent-color);
+    animation-delay: -12s;
+}
+
+.dot-5 {
+    width: 14px;
+    height: 14px;
+    bottom: 45%;
+    right: 5%;
+    background: var(--accent-light);
+    animation-delay: -6s;
+    animation-duration: 20s;
+}
+
+/* Holle ringen */
+.ring {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    opacity: 0.08;
+    animation: floatRing 35s ease-in-out infinite;
+}
+
+.ring-1 {
+    width: 150px;
+    height: 150px;
+    top: 25%;
+    right: 3%;
+    animation-delay: 0s;
+}
+
+.ring-2 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 3%;
+    border-color: var(--warm-brown);
+    animation-delay: -12s;
+    animation-duration: 28s;
+}
+
+@keyframes floatShape {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    25% {
+        transform: translateY(-30px) translateX(15px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-15px) translateX(-10px) scale(0.95);
+    }
+    75% {
+        transform: translateY(-40px) translateX(5px) scale(1.02);
+    }
+}
+
+@keyframes floatDot {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.1;
+    }
+    33% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.15;
+    }
+    66% {
+        transform: translateY(-10px) translateX(-15px);
+        opacity: 0.08;
+    }
+}
+
+@keyframes floatRing {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.08;
+    }
+    50% {
+        transform: translateY(-25px) rotate(180deg) scale(1.1);
+        opacity: 0.05;
+    }
+}
+
 /* ---- Noise texture overlay ---- */
 
 body::after {

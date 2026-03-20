@@ -38,6 +38,21 @@ const { title } = Astro.props;
         justify-content: center;
       }
     </style>
+    <!-- Floating Geometric Shapes -->
+    <div class="floating-shapes">
+      <div class="shape circle circle-1"></div>
+      <div class="shape circle circle-2"></div>
+      <div class="shape circle circle-3"></div>
+      <div class="shape dot dot-1"></div>
+      <div class="shape dot dot-2"></div>
+      <div class="shape dot dot-3"></div>
+      <div class="shape dot dot-4"></div>
+      <div class="shape dot dot-5"></div>
+      <div class="shape ring ring-1"></div>
+      <div class="shape ring ring-2"></div>
+    </div>
+    
+    <slot />
 
     <script>
       const observerOptions = {
